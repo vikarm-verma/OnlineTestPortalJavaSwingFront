@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 28, 2021 10:41:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="onlineassessment.entity.Schedulemt" table="schedulemt" catalog="onlineassessment">
+        <id name="schmtid" type="string">
+            <column name="schmtid" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="active" type="java.lang.Boolean">
+            <column name="active" />
+        </property>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19" />
+        </property>
+        <property name="module" type="string">
+            <column name="module" />
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19" />
+        </property>
+        <set name="studentmts" table="studentmt" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="schmtid" not-null="true" />
+            </key>
+            <one-to-many class="onlineassessment.entity.Studentmt" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+create table questionstable(
+    qID int not null,
+    question varchar(255) not null,
+    opt1 varchar(100) not null,
+    opt2 varchar(100) not null,
+    opt3 varchar(100) not null,
+    opt4 varchar(100) not null,
+    ans int 	not null,
+    primary key(qID)
+);
+
+
+create table studentid(studentid int not null auto_increment primary key);
+
+create table studentregistration(studentId varchar(12)  not null  primary key default '0',
+studentName varchar(50) not null , studentEmail varchar(50) not null , studentPassword varchar(50) not null );
+
+DELIMITER $$
+CREATE TRIGGER tg_student_insert
+BEFORE INSERT ON studentregistration
+FOR EACH ROW
+BEGIN
+  INSERT INTO studentid VALUES (NULL);
+  SET NEW.studentid = CONCAT('JUMPSID', LPAD(LAST_INSERT_ID(), 5, '0'));
+END$$
+DELIMITER ;
+
+
+insert into employeeregistration values("JUMPAID00001","18/01/2021 9:32","rich@gmail.com","Rich Bowers","rich@123","ROLE_ADMIN","YES")
+
+create table studentvideo
+(id int  not null primary key auto_increment,
+studentId varchar(500) not null,
+videolink varchar(1000) not null,testdate date not null);
+

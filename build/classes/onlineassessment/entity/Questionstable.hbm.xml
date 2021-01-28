@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 28, 2021 10:41:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="onlineassessment.entity.Questionstable" table="questionstable" catalog="onlineassessment">
+        <id name="qid" type="int">
+            <column name="qID" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="question" type="string">
+            <column name="question" not-null="true" />
+        </property>
+        <property name="opt1" type="string">
+            <column name="opt1" length="100" not-null="true" />
+        </property>
+        <property name="opt2" type="string">
+            <column name="opt2" length="100" not-null="true" />
+        </property>
+        <property name="opt3" type="string">
+            <column name="opt3" length="100" not-null="true" />
+        </property>
+        <property name="opt4" type="string">
+            <column name="opt4" length="100" not-null="true" />
+        </property>
+        <property name="ans" type="int">
+            <column name="ans" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

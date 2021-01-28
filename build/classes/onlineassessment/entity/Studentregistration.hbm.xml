@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 28, 2021 10:41:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="onlineassessment.entity.Studentregistration" table="studentregistration" catalog="onlineassessment">
+        <id name="SId" type="string">
+            <column name="s_id" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="date" type="string">
+            <column name="date" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" unique="true" />
+        </property>
+        <property name="fullName" type="string">
+            <column name="full_name" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" />
+        </property>
+    </class>
+</hibernate-mapping>
